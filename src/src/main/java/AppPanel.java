@@ -22,7 +22,9 @@ public class AppPanel extends JPanel {
         this.setDoubleBuffered(true);
     }
 
-    public void paint(Graphics g) {
+    @Override
+    protected void paintComponent(Graphics g) {
+        super.paintComponent(g);
         for (int x = 0; x <= screenWidth; x += tileSize)
             for (int y = 0; y <= screenHeight; y += tileSize)
                 g.drawRect(x, y, tileSize, tileSize);
